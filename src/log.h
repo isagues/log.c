@@ -15,7 +15,7 @@
 
 #define LOG_VERSION "0.1.0"
 
-typedef struct {
+typedef struct LogEvent {
   va_list ap;
   const char *fmt;
   const char *file;
@@ -23,9 +23,9 @@ typedef struct {
   void *udata;
   int line;
   int level;
-} log_Event;
+} LogEvent;
 
-typedef void (*log_LogFn)(log_Event *ev);
+typedef void (*log_LogFn)(LogEvent *ev);
 typedef void (*log_LockFn)(bool lock, void *udata);
 
 typedef enum LogLevel { LOG_LEVEL_TRACE, LOG_LEVEL_DEBUG, LOG_LEVEL_INFO, LOG_LEVEL_WARN, LOG_LEVEL_ERROR, LOG_LEVEL_FATAL } LogLevel;
