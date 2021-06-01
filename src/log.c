@@ -24,7 +24,7 @@
 
 #define MAX_CALLBACKS 32
 
-typedef struct {
+typedef struct Callback {
   log_LogFn fn;
   void *udata;
   int level;
